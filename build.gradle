@@ -1,0 +1,38 @@
+plugins {
+    id "java"
+    id "jacoco"
+    id 'org.springframework.boot' version "1.5.9.RELEASE"
+    id "org.sonarqube" version "2.6"
+}
+
+group 'com.dgrabok'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    mapstructVersion = "1.2.0.Final"
+    lombokVersion = "1.16.16"
+    springBootVersion = "1.5.9.RELEASE"
+    commonsCollectionsVersion = "4.1"
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compileOnly "org.mapstruct:mapstruct-processor:${mapstructVersion}",
+            "org.projectlombok:lombok:${lombokVersion}"
+
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+            "commons-io:commons-io:2.6",
+            "org.mapstruct:mapstruct-jdk8:${mapstructVersion}",
+            "org.apache.commons:commons-collections4:${commonsCollectionsVersion}"
+
+    testCompile 'junit:junit:4.12',
+            "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+}
+
+test { finalizedBy jacocoTestReport }

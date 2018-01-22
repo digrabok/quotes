@@ -1,0 +1,7 @@
+.idea/
+
+build/
+out/
+
+src/main/resources/application.yml
+src/main/resources/quotes.txt

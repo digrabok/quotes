@@ -1,0 +1,5 @@
+quotes-source:
+  file-path: classpath:quotes.txt # Path for loading sources file with predefined quotes
+  fields-delimiter: \t # Fields separator for quotes source rows
+quotes-search:
+  algorithm: RabinKarp

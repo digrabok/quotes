@@ -1,0 +1,7 @@
+version: "3"
+services:
+  sonar:
+    image: sonarqube:6.7.1
+    container_name: quoter_sonar
+    ports:
+      - "9000:9000"
